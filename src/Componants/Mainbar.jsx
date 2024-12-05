@@ -3,13 +3,15 @@ import './Mainbar.css'
 function Mainbar() {
 
     const data2 = [
-        {img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image4.png?raw=true", title:"Neffex Playlist"},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image3.png?raw=true", title:"K/DA"},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image1.png?raw=true", title:"Liked Songs"},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image2.png?raw=true", title:"Dance/ Electronix mix"}
+        {id:'2',img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image4.png?raw=true", title:"Neffex Playlist"},{id:'4',img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image3.png?raw=true", title:"K/DA"},{id:'6',img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image1.png?raw=true", title:"Liked Songs"},{id:'8',img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image2.png?raw=true", title:"Dance/ Electronix mix"},{id:'1',img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image4.png?raw=true", title:"Neffex Playlist"},{id:'3',img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image4.png?raw=true", title:"Neffex Playlist"}
     ];
 
 
     const data3 = [
         {img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image8.png?raw=true", title:"Meditation SELF"},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image7.png?raw=true", title:"Words beyond act... "},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image6.png?raw=true", title:"The Alexa Shows"},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image5.png?raw=true", title:"The Stories of Ma..."},{img:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image10.png?raw=true", title:"Dance/ Electronix mix"}
     ];
+
+
 
     
 
@@ -60,7 +62,17 @@ function Mainbar() {
                     <p className="text2">Dance/ Electronix mix</p>
                 </div> */}
 
-                    {data2.map((i)=>(
+                    {/* {data2.map((i)=>(
+                        <>
+                        <div className="child">
+                        <img className="images2" src={i.img}/>
+                        <p className='text2'>{i.title}</p>
+                        </div>
+                        </>
+                    ))} */}
+
+                    {data2.filter(data =>data.id % 2 == 0)
+                    .map((i)=>(
                         <>
                         <div className="child">
                         <img className="images2" src={i.img}/>
@@ -68,6 +80,7 @@ function Mainbar() {
                         </div>
                         </>
                     ))}
+
 
 
             </div>
